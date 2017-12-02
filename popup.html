@@ -1,0 +1,147 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Bitcoin Price Comparision</title>
+    <style type="text/css">
+      h1 {
+        font-size: 15px;
+      }
+      input {
+        font-size: 17px
+      }
+      .body-wraper {
+        margin: 0px;
+        float: left;
+        width: 1070px;
+      }
+      .container {
+        margin: 10px;
+        float: left;
+      }
+      .column {
+        align-items: center;
+        padding : 5px 5px 10px 10px;
+        float: left;
+        /* justify-content: space-between; */
+      }
+      .column-title {
+        text-align: center;
+        float : left;
+        width : 100%;
+      }
+      .row-title {
+        margin-bottom : 10px;
+        font-size: 20px;
+      }
+      .cell {
+        margin-bottom : 10px;
+        font-size: 17px;
+      }
+      .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+
+        font-size: 16px;
+    }
+    .main-inputs {
+      align-items: center;
+      padding : 5px 5px 10px 10px;
+      /* float: left; */
+    }
+    .main-inputs-title {
+      float: left;
+      width : 130px;
+    }
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <div class="body-wraper">
+      <section class="topbar">
+        <h1>Bitcoin Price</h1>
+        <!-- <div id="akjwdka"> </div> -->
+        <div id="loading_indicator" class="loader"></div>
+      </section>
+      <section class="container">
+        <div class="cell">
+          <div>
+            <div class="main-inputs"><div class="main-inputs-title">Qty: </div><input type = "number" value = "1" min="1" name="quantity_hold" id = "quantity_hold" /></div>
+            <div class="main-inputs"><div class="main-inputs-title">Cost (Buy Price): </div><input type = "number" value = "1000" min="1" name="buy_price" id = "buy_price" /></div>
+            <div class="main-inputs">
+                <div class="main-inputs-title">Qty Type:</div> <select name="quantity_type">
+                    <option value="btc">btc</option>
+                    <option value="bits">bits</option>
+                </select></br></br></br>
+            </div>
+          </div>
+          <!-- <div id="fetchDataButton" class="button">Fetch Data</button> -->
+        </div>
+        <div id="fetchDataButton" class="button">Fetch Data</div>
+        <div class="column">
+          <div>
+            <h3 class="column-title">Source</h3>
+            <div class="row-title zebpay-item">ZebPay</div>
+            <div class="row-title coindesk-item">Coindesk</div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div>
+            <h3 class="column-title">Buy Price</h3>
+            <div class="cell zebpay-item">INR<input name="zebpay_buy_price" disabled /></div>
+            <div class="cell coindesk-item">INR<input name="coindesk_buy_price" disabled /></div>
+          </div>
+        </div>
+
+        <div class="column">
+            <div>
+              <h3 class="column-title">Sell Price</h3>
+              <div class="cell zebpay-item">INR<input name="zebpay_sell_price" disabled /></div>
+              <div class="cell coindesk-item">INR<input name="coindesk_sell_price" disabled /></div>
+            </div>
+          </div>
+
+        <div class="column">
+          <div>
+            <h3 class="column-title">Net Price (Buy)</h3>
+            <div class="cell zebpay-item">INR<input name="zebpay_net_buy_price" disabled /></div>
+            <div class="cell coindesk-item">INR<input name="coindesk_net_buy_price" disabled /></div>
+          </div>
+        </div>
+        <div class="column">
+          <div>
+            <h3 class="column-title">Net Price (Sell)</h3>
+            <div class="cell zebpay-item">INR<input name="zebpay_net_sell_price" disabled /></div>
+            <div class="cell coindesk-item">INR<input name="coindesk_net_sell_price" disabled /></div>
+          </div>
+        </div>
+      </section>
+      <footer class="footerbar">
+
+      </footer>
+    </div>
+  </body>
+</html>
