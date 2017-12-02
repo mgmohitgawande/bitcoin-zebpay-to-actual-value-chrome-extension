@@ -65,9 +65,11 @@
         border: 16px solid #f3f3f3; /* Light grey */
         border-top: 16px solid #3498db; /* Blue */
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         animation: spin 2s linear infinite;
+        position: relative;
+        margin-left: 100px
     }
 
     @keyframes spin {
@@ -81,7 +83,7 @@
   <body>
     <div class="body-wraper">
       <section class="topbar">
-        <h1>Bitcoin Price</h1>
+        <h1 style = "float: left;">Bitcoin Price</h1>
         <!-- <div id="akjwdka"> </div> -->
         <div id="loading_indicator" class="loader"></div>
       </section>
