@@ -141,7 +141,7 @@
         document.getElementsByName('buy_price')[0].value = buy_price = items.buy_price ? items.buy_price : null
 
         document.getElementsByName('buy_alarm')[0].value = items.buy_alarm
-        document.getElementsByName('sell_alarm')[0].value = items.buy_alarm
+        document.getElementsByName('sell_alarm')[0].value = items.sell_alarm
 
         setTimeout(getData, 0)
         setInterval(getData, 4000)
