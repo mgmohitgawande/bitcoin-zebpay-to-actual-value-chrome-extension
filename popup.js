@@ -48,7 +48,7 @@
               handleNotification(data)
               document.getElementsByName('zebpay_buy_price')[0].value = (data.buy * quantity_type_multiplier).toFixed(2);
               document.getElementsByName('zebpay_sell_price')[0].value = (data.sell * quantity_type_multiplier).toFixed(2);
-              document.getElementsByName('zebpay_net_buy_price')[0].value = (data.buy * quantity_hold * quantity_type_multiplier).toFixed(2);
+              // document.getElementsByName('zebpay_net_buy_price')[0].value = (data.buy * quantity_hold * quantity_type_multiplier).toFixed(2);
               document.getElementsByName('zebpay_net_sell_price')[0].value = (data.sell * quantity_hold * quantity_type_multiplier).toFixed(2);
               document.getElementById('bitcoin-price-zebpay').innerText = document.getElementsByName('zebpay_buy_price')[0].value + '  /  ' + document.getElementsByName('zebpay_sell_price')[0].value;
               if(buy_price)
@@ -88,7 +88,7 @@
             }
             document.getElementsByName('coindesk_buy_price')[0].value = (data.buy * quantity_type_multiplier).toFixed(2);
             document.getElementsByName('coindesk_sell_price')[0].value = (data.sell * quantity_type_multiplier).toFixed(2);
-            document.getElementsByName('coindesk_net_buy_price')[0].value = (data.buy * quantity_hold * quantity_type_multiplier).toFixed(2);
+            // document.getElementsByName('coindesk_net_buy_price')[0].value = (data.buy * quantity_hold * quantity_type_multiplier).toFixed(2);
             document.getElementsByName('coindesk_net_sell_price')[0].value = (data.sell * quantity_hold * quantity_type_multiplier).toFixed(2);
             if(buy_price)
             if(parseInt(document.getElementsByName('coindesk_net_sell_price')[0].value) < parseInt(buy_price)){
