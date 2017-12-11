@@ -38,7 +38,7 @@
     }
     var getZebPayData = function(){
       return new Promise(function(success, failure){
-        fetch('https://api.zebpay.com/api/v1/ticker?currencyCode=INR')
+        fetch('https://www.zebapi.com/api/v1/market/ticker/btc/inr')
           .then(function(response){
             return response.json()
           }, function(error){
